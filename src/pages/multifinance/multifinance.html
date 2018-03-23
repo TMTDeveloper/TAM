@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Multi Finance</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  <ion-content padding>
+      <ion-list>
+            <ion-item>
+              <ion-label color="primary">Jenis Tagihan</ion-label>
+              <ion-select [(ngModel)]="datapost.xproductcode" placeholder="Not Selected">
+                <ion-option value="BMSFNADIRA">ADIRA Finance</ion-option>
+                <ion-option value="BMSFNBAF">BAF Finance</ion-option>
+                <ion-option value="BMSFNWOM">WOM Finance</ion-option>
+                <!-- <ion-option value="mcf">MCF Finance</ion-option>
+                <ion-option value="fif">FIF Finance</ion-option>
+                <ion-option value="summitot">Summit OTO Finance</ion-option>
+                <ion-option value="mandiritunas">Mandiri Tunas Finance</ion-option>
+                <ion-option value="kreditplus">Kredit Plus Finance</ion-option>
+                <ion-option value="itcmulti">ITC Multi Finance</ion-option>
+                <ion-option value="MNC">MNC Fianance</ion-option>
+                <ion-option value="columbia">Columbia</ion-option>
+                <ion-option value="acc">ACC</ion-option> -->
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label color="primary">Nomor Pelanggan</ion-label>
+              <ion-input [(ngModel)]="nomorpelanggan" type="number" pattern="\d*" placeholder="Not Inputed"></ion-input>
+            </ion-item>
+            <button ion-button block (tap)="SubmitCekTagihan()">CEK TAGIHAN</button>
+        </ion-list>
+  </ion-content>
+  

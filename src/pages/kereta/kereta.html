@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Train Ticket</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="master">
+    <ion-list>
+      <button ion-item clear (tap)="OpenModalTujuan('origin')">
+        <button ion-button item-start clear icon-only>
+          <ion-icon name="md-train"></ion-icon>
+        </button>
+        <ion-label stacked style="color: #000;">Origin</ion-label>
+        <ion-input placeholder="Select origin city/station" type="text" [(ngModel)]="datasearch.departure.name" readonly="true"></ion-input>
+      </button>
+  
+      <button ion-item tappable clear (tap)="OpenModalTujuan('destination')">
+        <button ion-button item-start clear icon-only>
+          <ion-icon name="md-train"></ion-icon>
+        </button>
+        <ion-label stacked style="color: #000;">Destination</ion-label>
+        <ion-input placeholder="Select destination city/station" type="text" [(ngModel)]="datasearch.arrival.name" readonly="true"></ion-input>
+      </button>
+      <ion-grid>
+        <ion-row>
+          <button class="icondate" ion-button item-start clear icon-only>
+            <ion-icon name="calendar"></ion-icon>
+          </button>
+          <ion-col>
+  
+            <ion-item>
+              <ion-label stacked style="color: #000;">Departure Date</ion-label>
+  
+              <ion-datetime displayFormat="DDD, DD MMM YYYY" [(ngModel)]="datasearch.datedeparture" [min]="event.today" [max]="event.maxdate">
+              </ion-datetime>
+            </ion-item>
+  
+            <expandable [expandHeight]="64.19" [expanded]="roundtrip">
+              <ion-item *ngIf="roundtrip==true">
+                <ion-label stacked style="color: #000;">Return Date</ion-label>
+                <ion-datetime displayFormat="DDD, DD MMM YYYY" [(ngModel)]="datasearch.datereturn" [min]="event.today" [max]="event.maxdate"></ion-datetime>
+              </ion-item>
+  
+  
+            </expandable>
+          </ion-col>
+          <ion-col>
+            <ion-label stacked>Round-Trip?</ion-label>
+            <ion-toggle color="primary" [(ngModel)]="roundtrip"></ion-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+      <button ion-item>
+        <button ion-button item-start clear icon-only>
+          <ion-icon name="md-people"></ion-icon>
+        </button>
+        <ion-label stacked style="color: #000;">Passanger</ion-label>
+        <ion-multi-picker item-content placeholder="Not Selected" [separator]="', '" [multiPickerColumns]="simpleColumns"></ion-multi-picker>
+      </button>
+      
+      
+      
+    </ion-list>
+    <button ion-button full (tap)='searchtrain()' disabled>
+      Search Train
+    </button>
+  
+  
+  </ion-content>
+  

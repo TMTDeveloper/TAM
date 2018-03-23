@@ -1,0 +1,117 @@
+<!--
+  Generated template for the HistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>History</ion-title>
+  </ion-navbar>
+
+    <ion-segment [(ngModel)]="statushist">
+      <ion-segment-button value="0" >
+        On Order
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        Finished
+      </ion-segment-button>
+    </ion-segment>
+
+</ion-header>
+
+
+
+
+<ion-content padding>
+  <div *ngFor="let trn of trnInfo | sortgrid:'tranDate'">
+    <div *ngIf="trn.status=='0'&& statushist=='0'">
+    <ion-card>
+      <ion-card-header>
+        <ion-item item-left>
+          {{trnNo(trn.tran_number)}} <strong>{{trn.tran_number}}</strong> </ion-item>
+        <ion-item item-left> Status : <strong> {{statusTrn(trn.status)}} </strong></ion-item>
+        <ion-item item-left> Amount : <strong> {{trn.amount | number:'3.2-5'}} </strong></ion-item>
+      </ion-card-header>
+      <ion-item style="padding-left: 32px">
+        <div item-start>
+         <p> {{trn.tranDate | date:'dd-MM-y'}} </p>
+        </div>
+          <div *ngIf="trn.status=='0'"item-end>
+        <button ion-button icon-left clear  (click)="trn.show=!trn.show">
+          <ion-icon name="qr-scanner"></ion-icon>
+          <div *ngIf="trn.show==true"> Hide QR Code </div>
+          <div *ngIf="trn.show==false || !trn.show"> Show QR Code </div>
+      </button>
+    </div>
+      </ion-item>
+    
+      <!-- <ion-card>
+  <expandable [expandHeight]="175" [expanded]="true">
+      <div>
+          <qr-code [value]="'All QR Code data goes here!'" [size]="175"></qr-code>
+        </div>
+    </expandable>
+  </ion-card> -->
+      <expandable [expandHeight]="160" [expanded]="trn.show">
+        <ion-segment>
+          <div style="padding-bottom: 10px;">
+            <qr-code [value]="valueQr(trn.tran_number)" [size]="150"></qr-code>
+          </div>
+        </ion-segment>
+      </expandable>
+    </ion-card>
+
+  </div>
+  <!-- <div>
+      <qr-code [value]="'All QR Code data goes here!'" [size]="350"></qr-code>
+  </div> -->
+  </div>
+
+  <div *ngFor="let trn of trnInfo | sortgrid:'tranDate'">
+      <div *ngIf="trn.status=='1'&& statushist=='1'">
+      <ion-card>
+        <ion-card-header>
+          <ion-item item-left>
+            {{trnNo(trn.tran_number)}} <strong>{{trn.tran_number}}</strong> </ion-item>
+          <ion-item item-left> Status : <strong> {{statusTrn(trn.status)}} </strong></ion-item>
+          <ion-item item-left> Amount : <strong> {{trn.amount | number:'3.2-5'}} </strong></ion-item>
+        </ion-card-header>
+        <ion-item style="padding-left: 32px">
+          <div item-start>
+           <p> {{trn.tranDate | date:'dd-MM-y'}} </p>
+          </div>
+            <div *ngIf="trn.status=='0'"item-end>
+          <button ion-button icon-left clear  (click)="trn.show=!trn.show">
+            <ion-icon name="qr-scanner"></ion-icon>
+            <div *ngIf="trn.show==true"> Hide QR Code </div>
+            <div *ngIf="trn.show==false || !trn.show"> Show QR Code </div>
+        </button>
+      </div>
+        </ion-item>
+      
+        <!-- <ion-card>
+    <expandable [expandHeight]="175" [expanded]="true">
+        <div>
+            <qr-code [value]="'All QR Code data goes here!'" [size]="175"></qr-code>
+          </div>
+      </expandable>
+    </ion-card> -->
+        <expandable [expandHeight]="160" [expanded]="trn.show">
+          <ion-segment>
+            <div style="padding-bottom: 10px;">
+              <qr-code [value]="valueQr(trn.tran_number)" [size]="150"></qr-code>
+            </div>
+          </ion-segment>
+        </expandable>
+      </ion-card>
+  
+    </div>
+    <!-- <div>
+        <qr-code [value]="'All QR Code data goes here!'" [size]="350"></qr-code>
+    </div> -->
+    </div>
+</ion-content>

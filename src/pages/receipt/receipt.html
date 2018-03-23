@@ -1,0 +1,2801 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Receipt</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- RECEIPT TELKOM TELEPON -->
+  <div *ngIf="datatagihan.kodeProduk=='TELEPON'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELKOM TELEFON
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. JASTEL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.namaPelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH BULAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.jumlahbill}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              REF
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.nomerReferensi1+", "+datatagihan.nomerReferensi2+", "+datatagihan.nomerReferensi3}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              RINCIAN TAGIHAN
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              &nbsp;&nbsp;&nbsp;MEI12
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan1 | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              &nbsp;&nbsp;&nbsp;APR12
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan2 | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              &nbsp;&nbsp;&nbsp;MAR12
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan3 | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan1--datatagihan.nilaiTagihan2--datatagihan.nilaiTagihan3--datatagihan.biayaAdmin
+              | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nilaiTagihan1--datatagihan.nilaiTagihan2--datatagihan.nilaiTagihan3--datatagihan.biayaAdmin | numbertoword
+            | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TELKOM VISION -->
+  <div *ngIf="datatagihan.kodeProduk=='TVTLKMV'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELKOM VISION
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. JASTEL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.namaPelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH BULAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.jumlahbill}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              REF
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.nomerReferensi1}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              RINCIAN TAGIHAN
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              &nbsp;&nbsp;&nbsp;MEI12
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan1 | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan1--datatagihan.nilaiTagihan2--datatagihan.nilaiTagihan3--datatagihan.biayaAdmin
+              | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nilaiTagihan1--datatagihan.nilaiTagihan2--datatagihan.nilaiTagihan3--datatagihan.biayaAdmin | numbertoword
+            | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TELKOM SPEEDY -->
+  <div *ngIf="datatagihan.kodeProduk=='SPEEDY'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELKOM SPEEDY
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. JASTEL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.namaPelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH BULAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.jumlahbill}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              REF
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.nomerReferensi1}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              RINCIAN TAGIHAN
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              &nbsp;&nbsp;&nbsp;MEI12
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan1 | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nilaiTagihan1--datatagihan.nilaiTagihan2--datatagihan.nilaiTagihan3--datatagihan.biayaAdmin
+              | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nilaiTagihan1--datatagihan.nilaiTagihan2--datatagihan.nilaiTagihan3--datatagihan.biayaAdmin | numbertoword
+            | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PASCABAYAR XL -->
+  <div *ngIf="datatagihan.kodeProduk=='HPXL'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELEPON PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA OPERATOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.providerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR TELEPON
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal|number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin |number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin| number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nominal--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PASCABAYAR TELKOMSEL -->
+  <div *ngIf="datatagihan.kodeProduk=='HPTSEL'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELEPON PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA OPERATOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.providerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR TELEPON
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal|number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin |number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin| number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nominal--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PASCABAYAR THREE -->
+  <div *ngIf="datatagihan.kodeProduk=='HPTHREE'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELEPON PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA OPERATOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.providerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR TELEPON
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal|number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin |number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin| number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nominal--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PASCABAYAR SMART -->
+  <div *ngIf="datatagihan.kodeProduk=='HPSMART'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELEPON PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA OPERATOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.providerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR TELEPON
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal|number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin |number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin| number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nominal--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PASCABAYAR FREN -->
+  <div *ngIf="datatagihan.kodeProduk=='HPFREN'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELEPON PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA OPERATOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.providerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR TELEPON
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal|number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin |number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin| number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nominal--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PASCABAYAR ESIA -->
+  <div *ngIf="datatagihan.kodeProduk=='HPESIA'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELEPON PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA OPERATOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.providerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR TELEPON
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal|number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin |number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin| number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nominal--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PASCABAYAR MATRIX -->
+  <div *ngIf="datatagihan.kodeProduk=='HPMTRIX'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TELEPON PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA OPERATOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.providerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR TELEPON
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal|number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin |number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin| number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.nominal--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TV ORANGE -->
+  <div *ngIf="datatagihan.kodeProduk=='TVORG80'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV ORANGE
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>
+              <h2>gg</h2>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TV BIG -->
+  <div *ngIf="datatagihan.kodeProduk=='TVBIG'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV BIG
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.periode || "-"}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>-</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.billAmount--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TV TOPAS -->
+  <div *ngIf="datatagihan.kodeProduk=='TVTOPAS'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV TOPAS
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.periode}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>-</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TERBILANG
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            {{datatagihan.billAmount--datatagihan.biayaAdmin | numbertoword | uppercase}}
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TV SKY -->
+  <div *ngIf="datatagihan.kodeProduk=='TVSKYFAM1'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV SKY
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.periode}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TV NEX -->
+  <div *ngIf="datatagihan.kodeProduk=='TVNEX'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV NEXMEDIA
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.periode}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TV KV -->
+  <div *ngIf="datatagihan.kodeProduk=='TVKV100'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV KVISION
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.periode}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>TERIMA KASIH TELAH MELAKUKAN PEMBAYARAN KVISION TV BERLANGGANAN.</ion-row>
+          <ion-row>KVISION TV MENYATAKAN STRUK INI</ion-row>
+          <ion-row>SEBAGAI BUKTI PEMBAYARAN YANG SAH</ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- RECEIPT TV INNOV -->
+  <div *ngIf="datatagihan.kodeProduk=='TVINNOV'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV INNOVATE
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.periode}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT TV INDOVISION -->
+  <div *ngIf="datatagihan.kodeProduk=='TVINDVS'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN TV INDOVISION
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              PERIODE BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.periode}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT FINANCE ADIRA -->
+  <div *ngIf="datatagihan.kodeProduk=='FNADIRAH'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN PINJAMAN/KREDIT ADIRA FINANCE
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA KREDIT
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ptName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR KONTRAK
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID REFF
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.billRefNumber}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO ANGSURAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.lastPaidPeriode | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              BIAYA TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT FINANCE BAF -->
+  <div *ngIf="datatagihan.kodeProduk=='FNBAF'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN PINJAMAN/KREDIT BUSSAN AUTO FINANCE
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR KONTRAK
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA KREDIT
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ptName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. POLISI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.carNumber}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TYPE MOTOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.itemMerkType}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              JATUH TEMPO
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.lastPaidDuedate}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ANGSURAN KE
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.lastPaidPeriode | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TENOR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.tenor | number}} BULAN</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ANGSURAN POKOK
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              BIAYA TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.miscFee | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.miscFee | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT FINANCE WOM -->
+  <div *ngIf="datatagihan.kodeProduk=='FNWOM'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN PINJAMAN/KREDIT WOM FINANCE
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA KREDIT
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ptName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR KONTRAK
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID REFF
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.carNumber}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ANGSURAN KE
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.lastPaidPeriode | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JATUH TEMPO
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.lastPaidDuedate}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              JUMLAH TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              BIAYA TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PDAM AETRA -->
+  <div *ngIf="datatagihan.kodeProduk=='WAAETRA'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN AETRA
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA PAM
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.pdamName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. PELANGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{nomorpelanggan}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              RINCIAN TAGIHAN
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              &nbsp; &nbsp; &nbsp;NOP 2014
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount1 | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount1--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT ASURANSI JIWASRAYA -->
+  <div *ngIf="datatagihan.kodeProduk=='ASRJWS'">
+    <ion-card>
+      <ion-card-header>
+        STRUK PEMBAYARAN ASURANSI JIWASRAYA
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TANGGAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{dateview}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO. RESI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ref2}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA ASURANSI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ptName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMOR POLIS
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerId1}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              RINCIAN TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.billerCode}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NOMINAL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TAGIHAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PLN NON TAGLIST -->
+  <div *ngIf="datatagihan.kodeProduk=='PLNNON'">
+    <ion-card>
+      <ion-card-header>
+        STRUK NON TAGIHAN LISTRIK
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              TRANSAKSI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.transactionName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NO REGISTRASI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.registrationNumber}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TGL REGISTRASI
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ptName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.subcriberName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ID PELANGGGAN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.subscriberid}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              BIAYA PLN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN BANK
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.nominal--datatagihan.biayaAdmin | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+
+  <!-- RECEIPT PLN PASCABAYAR -->
+  <div *ngIf="datatagihan.kodeProduk=='PLNPASC'">
+    <ion-card>
+      <ion-card-header>
+        STRUK TAGIHAN LISTRIK PLN PASCABAYAR
+      </ion-card-header>
+      <ion-card-content no-padding>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-5>
+              ID PEL
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.idpelanggan1}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              NAMA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.expireDate}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TARIF/DAYA
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.ptName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              RP TAG PLN
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerId1}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              REF
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+              BL/TH
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              STAND METER
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.customerName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              ADMIN BANK
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>{{datatagihan.billerCode}}</ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-5>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+            <ion-col col-6>----------------</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              TOTAL BAYAR
+            </ion-col>
+            <ion-col>
+              :
+            </ion-col>
+            <ion-col col-6>Rp. {{datatagihan.billAmount | number}}</ion-col>
+          </ion-row>
+          <ion-row>&nbsp;</ion-row>
+
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block disabled>BAYAR</button>
+  </div>
+</ion-content>
+

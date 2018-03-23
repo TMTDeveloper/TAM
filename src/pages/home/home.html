@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <!-- Slider -->
+  <ion-slides pager='true' loop='true' autoplay='10000' style="max-height:40%">
+    <ion-slide>
+      <img src="assets/img/slide1.png" style=" height: auto; margin-left: auto; margin-right: auto;">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/slide2.png" style=" height: auto; margin-left: auto; margin-right: auto;">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/slide3.png" style=" height: auto; margin-left: auto; margin-right: auto;">
+    </ion-slide>
+  </ion-slides>
+  
+  <ion-segment class="salkalqr">
+    <div class="butcol">
+      <button ion-button clear class="colbut" (click)="showPrompt('saldo')">
+        SALDO
+      </button>
+    </div>
+    <div class="butcol">
+      <button ion-button color="danger" clear class="colbut">
+        KALENDER
+      </button>
+    </div>
+    <div class="butcol">
+      <button ion-button color="danger" clear class="colbut" (click)="agenCheck()">
+        QR CODE
+      </button>
+    </div>
+  </ion-segment>
+  
+  <ion-grid text-center >
+    <ion-row>
+      <ion-col>
+        <button class="main-button" ion-button round large color="light" (click)="gotoPage('LakupandaiPage')">
+          <ion-img class="img-inside-button" src="assets/img/lakupandai.png" width="50" height="50"></ion-img>
+        </button>
+        <p class="title-main-menu" ion-text color="light">LAKU PANDAI</p>
+      </ion-col>
+      <ion-col>
+          <button class="main-button" ion-button round large color="light" (click)="gotoPage('MobilePage')">
+            <ion-img class="img-inside-button" src="assets/img/mobile.png" width="50" height="50"></ion-img>
+          </button>
+          <p class="title-main-menu" ion-text color="light">MOBILE BANKING</p>
+        </ion-col>
+        <ion-col>
+            <button class="main-button" ion-button round large color="light" (click)="gotoPage('ProdukperbankanPage')">
+              <ion-img class="img-inside-button" src="assets/img/produk.png" width="50" height="50"></ion-img>
+            </button>
+            <p class="title-main-menu" ion-text color="light">PRODUK</p>
+          </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <button class="main-button" ion-button round large color="light" (click)="gotoPage('PembelianPage')">
+              <ion-img class="img-inside-button" src="assets/img/pembelian.png" width="50" height="50"></ion-img>
+            </button>
+            <p class="title-main-menu" ion-text color="light">PEMBELIAN</p>
+          </ion-col>
+          <ion-col>
+              <button class="main-button" ion-button round large color="light" (click)="gotoPage('PembayaranPage')">
+                <ion-img class="img-inside-button" src="assets/img/pembayaran.png" width="50" height="50"></ion-img>
+              </button>
+              <p class="title-main-menu" ion-text color="light">PEMBAYARAN</p>
+            </ion-col>
+            <ion-col>
+                <button class="main-button" ion-button round large color="light" (tap)="gotoPage('ReportPage')">
+                  <ion-img class="img-inside-button" src="assets/img/report.png" width="50" height="50"></ion-img>
+                </button>
+                <p class="title-main-menu" ion-text color="light">LAPORAN</p>
+              </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

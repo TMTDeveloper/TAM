@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+      <ion-item>
+        <ion-icon name="contact" item-start></ion-icon>
+        Username
+        <p item-end>{{authInfo.username}}</p>
+      </ion-item>
+      <ion-item>
+          <ion-icon name="card" item-start></ion-icon>
+          Account No
+          <p item-end>{{authInfo.accountno}}</p>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="key" item-start></ion-icon>
+            Password
+            <p ion-button clear item-end style="color:#01abe6" (click)="openModal('PASS')">Ganti Password</p>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="key" item-start></ion-icon>
+              Pin
+              <p item-end ion-button clear style="color:#01abe6" (click)="openModal('PIN')">Ganti Pin</p>
+            </ion-item>
+    </ion-list>
+      
+
+    
+</ion-content>

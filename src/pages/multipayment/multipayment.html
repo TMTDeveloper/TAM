@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>MULTI PAYMENT</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <ion-list>
+          <ion-item>
+            <ion-label color="primary">Jenis Payment</ion-label>
+            <ion-select [(ngModel)]="datapost.xproductcode" placeholder="Not Selected">
+              <ion-option value="BMSTVBIG">TV BIG</ion-option>
+              <ion-option value="BMSTVTOPAS">TV TOPAS</ion-option>
+              <ion-option value="BMSTVSKYFAM1">TV SKY</ion-option>
+              <ion-option value="BMSTVORG80">TV ORANGE</ion-option>
+              <ion-option value="BMSTVNEX">TV NEXMEDIA</ion-option>
+              <ion-option value="BMSTVKV100">TV KVISION</ion-option>
+              <ion-option value="BMSTVINNOV">TV INNOVATE</ion-option>
+              <ion-option value="BMSTVINDVS">TV INDOVISION</ion-option>
+
+              <!-- <ion-option value="BMSWAAETRA">PDAM AETRA</ion-option> -->
+
+              <!-- <ion-option value="BMSASRJWS">ASURANSI JIWASRAYA</ion-option> -->
+
+              <!-- <ion-option value="BMSPLNPASC">PLN PASCABAYAR</ion-option>
+              <ion-option value="BMSPLNNON">PLN NON TAGLIST</ion-option> -->
+              
+
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary">Nomor Pelanggan</ion-label>
+            <ion-input [(ngModel)]="nomorpelanggan" type="number" pattern="\d*" placeholder="Not Inputed"></ion-input>
+          </ion-item>
+          <button ion-button block (tap)="SubmitCekTagihan()">CEK TAGIHAN</button>
+      </ion-list>
+</ion-content>

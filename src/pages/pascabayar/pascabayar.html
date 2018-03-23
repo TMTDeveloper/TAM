@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>PASCABAYAR</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  <ion-content padding>
+      <ion-list>
+            <ion-item>
+              <ion-label color="primary">Jenis Pascabayar</ion-label>
+              <ion-select [(ngModel)]="datapost.xproductcode" placeholder="Not Selected">
+                <ion-option value="BMSHPXL">Pascabayar XL</ion-option>
+                <ion-option value="BMSHPTSEL">Pascabayar TSEL</ion-option>
+                <ion-option value="BMSHPTHREE">Pascabayar THREE</ion-option>
+                <ion-option value="BMSHPSMART">Pascabayar SMART</ion-option>
+                <ion-option value="BMSHPFREN">Pascabayar FREN</ion-option>
+                <ion-option value="BMSHPESIA">Pascabayar ESIA</ion-option>
+                <ion-option value="BMSHPMTRIX">Pascabayar MATRIX</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label color="primary">Nomor Tagihan</ion-label>
+              <ion-input [(ngModel)]="nomorpelanggan" type="number" pattern="\d*" placeholder="Not Inputed"></ion-input>
+            </ion-item>
+            <button ion-button block (tap)="SubmitCekTagihan()">CEK TAGIHAN PASCABAYAR</button>
+        </ion-list>
+  </ion-content>
